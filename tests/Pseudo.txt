@@ -1,0 +1,37 @@
+Define the structs for each component category (Motherboard, CPU, RAM, Cooler, Storage, GPU, PowerSupply).
+
+Create vectors to store the components:
+
+motherboards
+cpus
+rams
+coolers
+storages
+gpus
+powerSupplies
+Parse the CSV file and populate the component vectors using the parseCSVFile function.
+
+Display a list of available components to the user, allowing them to choose one component from each category:
+
+motherboard
+cpu
+ram
+cooler
+storage
+gpu
+power supply
+Check if the selected RAM is compatible with the chosen motherboard using the isRAMCompatible function.
+
+If incompatible, inform the user and prompt them to choose another RAM.
+Check if the selected CPU is compatible with the chosen motherboard using the isCPUCompatible function.
+
+If incompatible, inform the user and prompt them to choose another CPU.
+Calculate the total wattage of the selected components by summing the wattage of the CPU, cooler, and GPU.
+
+Check if the selected storage is compatible with the chosen motherboard.
+
+Check if the total wattage exceeds the rated wattage range of the selected power supply.
+
+If it exceeds, inform the user that the power supply is not sufficient.
+If it is within the range, inform the user that the computer is compatible and can be turned on.
+End the program.
