@@ -1,12 +1,12 @@
-Component,Property 1,Property 2,Property 3,Property 4,Property 5,Property 6,Property 7,Property 8,Property 9,Property 10
-GPU,GeForce GTX 750 Ti,60,,,,,,,,
-GPU,GeForce GTX 950,90,,,,,,,,
-GPU,GeForce GTX 1050 Ti ,75,,,,,,,,
-GPU,GeForce GTX 1060 ,120,,,,,,,,
-GPU,GeForce GTX 1080,180,,,,,,,,
-GPU,GeForce RTX 2060,160,,,,,,,,
-GPU,GeForce RTX 2080 Ti,260,,,,,,,,
-GPU,Nvidia GeForce RTX 3050 ,120,,,,,,,,
-GPU,GeForce RTX 3060 ,170,,,,,,,,
-GPU,GeForce RTX 3080 Ti,350,,,,,,,,
+Property 1,Property 2,Property 3,Property 4,Property 5,Property 6,Property 7,Property 8,Property 9,Property 10
+GeForce GTX 750 Ti,90,,,,,,,,
+GeForce GTX 950,150,,,,,,,,
+GeForce GTX 1050 Ti,150,,,,,,,,
+GeForce GTX 1060 ,180,,,,,,,,
+GeForce GTX 1080,250,,,,,,,,
+GeForce RTX 2060,200,,,,,,,,
+GeForce RTX 2080 Ti,300,,,,,,,,
+Nvidia GeForce RTX 3050 ,260,,,,,,,,
+GeForce RTX 3060 ,250,,,,,,,,
+GeForce RTX 3080 Ti,500,,,,,,,,
 

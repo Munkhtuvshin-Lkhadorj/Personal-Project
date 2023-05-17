@@ -1,31 +1,31 @@
-Component,Property 1,Property 2,Property 3,Property 4,Property 5,Property 6,Property 7,Property 8,Property 9,Property 10
-CPU,i3 1st gen,73,1156
-CPU,i3 2nd gen,65,1155
-CPU,i3 3rd gen,60,1155
-CPU,i3 4th gen,54,1150
-CPU,i3 5th gen,60,1150
-CPU,i3 6th gen,51,1151
-CPU,i3 7th gen,51,1151
-CPU,i3 8th gen,90,1151
-CPU,i3 9th gen,95,1151
-CPU,i3 10th gen ,90,1200
-CPU,i5 1st gen,70,1156
-CPU,i5 2nd gen,80,1155
-CPU,i5 3rd gen,60,1155
-CPU,i5 4th gen,70,1150
-CPU,i5 5th gen,50,1150
-CPU,i5 6th gen,60,1151
-CPU,i5 7th gen,60,1151
-CPU,i5 8th gen,90,1151
-CPU,i5 9th gen,110,1151
-CPU,i5 10th gen ,120,1200
-CPU,i7 1st gen,75,1156
-CPU,i7 2nd gen,80,1155
-CPU,i7 3rd gen,60,1155
-CPU,i7 4th gen,95,1150
-CPU,i7 5th gen,70,1150
-CPU,i7 6th gen,90,1151
-CPU,i7 7th gen,95,1151
-CPU,i7 8th gen,100,1151
-CPU,i7 9th gen,120,1151
-CPU,i7 10th gen ,140,1200
+Property 1,Property 2,Property 3,Property 4,Property 5,Property 6,Property 7,Property 8,Property 9,Property 10
+i3 1st gen,73,1156
+i3 2nd gen,65,1155
+i3 3rd gen,60,1155
+i3 4th gen,54,1150
+i3 5th gen,60,1150
+i3 6th gen,51,1151
+i3 7th gen,51,1151
+i3 8th gen,90,1151
+i3 9th gen,95,1151
+i3 10th gen,90,1200
+i5 1st gen,70,1156
+i5 2nd gen,80,1155
+i5 3rd gen,60,1155
+i5 4th gen,70,1150
+i5 5th gen,50,1150
+i5 6th gen,60,1151
+i5 7th gen,60,1151
+i5 8th gen,90,1151
+i5 9th gen,110,1151
+i5 10th gen,120,1200
+i7 1st gen,75,1156
+i7 2nd gen,80,1155
+i7 3rd gen,60,1155
+i7 4th gen,95,1150
+i7 5th gen,70,1150
+i7 6th gen,90,1151
+i7 7th gen,95,1151
+i7 8th gen,100,1151
+i7 9th gen,120,1151
+i7 10th gen,140,1200
