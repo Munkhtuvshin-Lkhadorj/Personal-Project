@@ -183,7 +183,6 @@ int main() { // Create vectors and get the values of CSV files and move it to th
 
     // Calculate the wattage of the selected components
     int totalWattage = 0;
-    try {
         totalWattage += stoi(selectedCooler.property2); // Stoi function is used to convert String type integer to normal integer for calculation purpose Credit: https://www.youtube.com/watch?v=JuvyOJ1iVSM
         totalWattage += stoi(selectedGPU.property2);
         totalWattage += stoi(selectedCPU.property2);
@@ -196,9 +195,6 @@ int main() { // Create vectors and get the values of CSV files and move it to th
         } else {
             cout << "The wattage rate of your power supply is not sufficient to handle the chosen components. Expect crashes under load." << endl;
         }
-    } catch (const invalid_argument& e) {
-        cout << "Invalid wattage value encountered. Please check the CSV files for correct property values." << endl;
-    }
 
     return 0;
 }
