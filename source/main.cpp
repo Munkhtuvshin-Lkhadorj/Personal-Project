@@ -3,20 +3,28 @@
 #include <string>
 #include <vector>
 #include <sstream>
+//CREDITS
+//FILE PARSING : https://www.youtube.com/watch?v=NFvxA-57LLA
+//STOI FUNCTION AND ITS USE: https://www.youtube.com/watch?v=NFvxA-57LLA
+
 
 using namespace std;
 
 class Component {
 public:
-    string name;
-    string socketType;
-    string ramType;
-    string property1; // Add properties as needed
+    string property1;
     string property2;
+    string property3;
+    string property4;
+    string property5;
+    string property6;
+
     Component() = default;
 
-    Component(const string& name, const string& socketType, const string& ramType)
-        : name(name), socketType(socketType), ramType(ramType) {
+    Component(const string& property1, const string& property2, const string& property3,
+              const string& property4, const string& property5, const string& property6)
+        : property1(property1), property2(property2), property3(property3),
+          property4(property4), property5(property5), property6(property6) {
     }
 };
 
@@ -32,16 +40,21 @@ bool parseCSVFile(const string& filename, vector<Component>& componentList) {
 
     while (getline(file, line)) {
         stringstream ss(line);
-        string category, name, socketType, ramType;
-        getline(ss, category, ',');
-        getline(ss, name, ',');
-        getline(ss, socketType, ',');
-        getline(ss, ramType, ',');
+        string property1, property2, property3, property4, property5, property6;
+        getline(ss, property1, ',');
+        getline(ss, property2, ',');
+        getline(ss, property3, ',');
+        getline(ss, property4, ',');
+        getline(ss, property5, ',');
+        getline(ss, property6, ',');
 
         Component comp;
-        comp.name = name;
-        comp.socketType = socketType;
-        comp.ramType = ramType;
+        comp.property1 = property1;
+        comp.property2 = property2;
+        comp.property3 = property3;
+        comp.property4 = property4;
+        comp.property5 = property5;
+        comp.property6 = property6;
 
         componentList.push_back(comp);
     }
@@ -52,7 +65,7 @@ bool parseCSVFile(const string& filename, vector<Component>& componentList) {
 
 void displayComponents(const vector<Component>& components) {
     for (size_t i = 0; i < components.size(); ++i) {
-        cout << i + 1 << ". " << components[i].name << endl;
+        cout << i + 1 << ". " << components[i].property1 << endl;
     }
 }
 
@@ -67,11 +80,11 @@ Component selectComponent(const vector<Component>& components) {
         return components[index];
     } else {
         // Invalid choice, return an empty component
-        return Component("", "", "");
+        return Component("", "", "", "", "", "");
     }
 }
 
-int main() {
+int main() { // Create vectors and get the values of CSV files and move it to the vectors
     vector<Component> motherboardComponents;
     vector<Component> cpuComponents;
     vector<Component> ramComponents;
@@ -80,43 +93,47 @@ int main() {
     vector<Component> gpuComponents;
     vector<Component> powerSupplyComponents;
 
-    bool parseSuccess = parseCSVFile("cpu.csv", cpuComponents);
+    bool parseSuccess = parseCSVFile("motherboard.csv", motherboardComponents); // Motherboard components are passed to its corrosponding vector
+    if (!parseSuccess) {
+        cout << "Failed to parse the CSV file for Motherboard." << endl;
+        return 1;
+    }
+
+    parseSuccess = parseCSVFile("cpu.csv", cpuComponents);// Cpu components are passed to its corrosponding vector
     if (!parseSuccess) {
         cout << "Failed to parse the CSV file for CPU." << endl;
         return 1;
     }
 
-    parseSuccess = parseCSVFile("motherboard.csv", motherboardComponents);
+    parseSuccess = parseCSVFile("Ram.csv", ramComponents);// Ram components are passed to its corrosponding vector
     if (!parseSuccess) {
-        cout << "Failed to parse the CSV file Motherboard." << endl;
-        return 1;
-    }
-    parseSuccess = parseCSVFile("Ram.csv", ramComponents);
-    if (!parseSuccess) {
-        cout << "Failed to parse the CSV Ram." << endl;
-        return 1;
-    }
-    parseSuccess = parseCSVFile("Cooler.csv", coolerComponents);
-    if (!parseSuccess) {
-        cout << "Failed to parse the CSV Cooler." << endl;
-        return 1;
-    }
-    parseSuccess = parseCSVFile("Storage.csv", storageComponents);
-    if (!parseSuccess) {
-        cout << "Failed to parse the CSV Storage." << endl;
-        return 1;
-    }
-    parseSuccess = parseCSVFile("Gpu.csv", gpuComponents);
-    if (!parseSuccess) {
-        cout << "Failed to parse the CSV GPU." << endl;
-        return 1;
-    }
-    parseSuccess = parseCSVFile("PowerSupply.csv", powerSupplyComponents);
-    if (!parseSuccess) {
-        cout << "Failed to parse the CSV PowerSupply." << endl;
+        cout << "Failed to parse the CSV file for RAM." << endl;
         return 1;
     }
 
+    parseSuccess = parseCSVFile("Cooler.csv", coolerComponents);// Cooler components are passed to its corrosponding vector
+    if (!parseSuccess) {
+        cout << "Failed to parse the CSV file for Cooler." << endl;
+        return 1;
+    }
+
+    parseSuccess = parseCSVFile("Storage.csv", storageComponents);// Storage components are passed to its corrosponding vector
+    if (!parseSuccess) {
+        cout << "Failed to parse the CSV file for Storage." << endl;
+        return 1;
+    }
+
+    parseSuccess = parseCSVFile("Gpu.csv", gpuComponents);// Gpu components are passed to its corrosponding vector
+    if (!parseSuccess) {
+        cout << "Failed to parse the CSV file for GPU." << endl;
+        return 1;
+    }
+
+    parseSuccess = parseCSVFile("PowerSupply.csv", powerSupplyComponents);// PSU components are passed to its corrosponding vector
+    if (!parseSuccess) {
+        cout << "Failed to parse the CSV file for Power Supply." << endl;
+        return 1;
+    }
 
     // Display the available components and let the user choose one from each category
     cout << "Choose one component from each category:" << endl;
@@ -140,11 +157,11 @@ int main() {
     cout << endl;
 
     // Cooler
-    cout << "Cooler:" <<
-    endl;
+    cout << "Cooler:" << endl;
     displayComponents(coolerComponents);
     Component selectedCooler = selectComponent(coolerComponents);
     cout << endl;
+
     // Storage
     cout << "Storage:" << endl;
     displayComponents(storageComponents);
@@ -163,7 +180,25 @@ int main() {
     Component selectedPowerSupply = selectComponent(powerSupplyComponents);
     cout << endl;
 
-    // Do something with the selected components...
+
+    // Calculate the wattage of the selected components
+    int totalWattage = 0;
+    try {
+        totalWattage += stoi(selectedCooler.property2); // Stoi function is used to convert String type integer to normal integer for calculation purpose Credit: https://www.youtube.com/watch?v=JuvyOJ1iVSM
+        totalWattage += stoi(selectedGPU.property2);
+        totalWattage += stoi(selectedCPU.property2);
+        totalWattage += stoi(selectedMotherboard.property2);
+
+        int selectedPowerSupplyWattage = stoi(selectedPowerSupply.property2);
+
+        if (selectedPowerSupplyWattage >= totalWattage) {
+            cout << "The wattage rate of your power supply is sufficient to handle the chosen components." << endl;
+        } else {
+            cout << "The wattage rate of your power supply is not sufficient to handle the chosen components. Expect crashes under load." << endl;
+        }
+    } catch (const invalid_argument& e) {
+        cout << "Invalid wattage value encountered. Please check the CSV files for correct property values." << endl;
+    }
 
     return 0;
-    }
+}
