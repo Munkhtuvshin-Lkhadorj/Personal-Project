@@ -83,6 +83,10 @@ Component selectComponent(const vector<Component>& components) {
         return Component("", "", "", "", "", "");
     }
 }
+bool isRAMCompatible(const Component& selectedRAM, const Component& selectedMotherboard) {
+    // Check if the DDR information matches
+    return selectedRAM.property2 == selectedMotherboard.property4;
+}
 
 int main() { // Create vectors and get the values of CSV files and move it to the vectors
     vector<Component> motherboardComponents;
@@ -180,6 +184,14 @@ int main() { // Create vectors and get the values of CSV files and move it to th
     Component selectedPowerSupply = selectComponent(powerSupplyComponents);
     cout << endl;
 
+    //Checks for Ram compatibility
+    bool ramCompatible = isRAMCompatible(selectedRAM, selectedMotherboard);
+    // Display compatibility result
+    if (ramCompatible) {
+        cout << "The selected RAM is compatible with the chosen motherboard." << endl;
+    } else {
+        cout << "The selected RAM is not compatible with the chosen motherboard." << endl;
+    }
 
     // Calculate the wattage of the selected components
     int totalWattage = 0;
