@@ -23,26 +23,16 @@ public:
 
     Component() = default;
 
-    Component(const string &property1, const string &property2, const string &property3,
-              const string &property4, const string &property5, const string &property6)
-        : property1(property1), property2(property2), property3(property3),
-          property4(property4), property5(property5), property6(property6)
-    {
+    Component(const string &property1, const string &property2, const string &property3,const string &property4, const string &property5, const string &property6): property1(property1), property2(property2), property3(property3),property4(property4), property5(property5), property6(property6){
     }
 };
 
 //Function to parse a CSV file and populate the component vectors
 bool parseCSVFile(const string &filename, vector<Component> &componentList)
 {
-    ifstream file(filename); // Checks if it opened or not
-    if (!file.is_open())
-    {
-        cout << "Failed to open the file." << endl;
-        return false;
-    }
-
+    ifstream file(filename); // Opens the file
     string line;
-    getline(file, line); // Skip the header row
+    getline(file, line);
 
     while (getline(file, line))
     {
@@ -72,8 +62,7 @@ bool parseCSVFile(const string &filename, vector<Component> &componentList)
 
 void displayComponents(const vector<Component> &components) // Displaying components to the user
 {
-    for (size_t i = 0; i < components.size(); ++i)
-    {
+    for (size_t i = 0; i < components.size(); ++i){
         cout << i + 1 << ". " << components[i].property1 << endl;
     }
 }
