@@ -114,7 +114,7 @@ int main()
     bool parseSuccess = parseCSVFile("motherboard.csv", motherboardComponents); // Motherboard components are passed to its corrosponding vector
     if (!parseSuccess)
     {
-        cout << "Failed to parse the CSV file for Motherboard." << endl;
+        cout << "Failed to parse the CSV file for Motherboard." << endl; // These are all for diagnostic purposes as I was having trouble parsing.
         return 1;
     }
 
